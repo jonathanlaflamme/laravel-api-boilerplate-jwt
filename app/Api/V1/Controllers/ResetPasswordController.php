@@ -70,7 +70,7 @@ class ResetPasswordController extends Controller
      */
     protected function reset($user, $password)
     {
-        $user->password = $password;
+        $user->password = bcrypt($password);
         $user->save();
     }
 }
